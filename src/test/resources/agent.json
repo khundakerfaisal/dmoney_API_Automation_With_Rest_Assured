@@ -1,0 +1,18 @@
+[
+  {
+    "password": "123454",
+    "phoneNumber": "01478551459",
+    "role": "Agent",
+    "name": "Ying",
+    "nid": "22554450",
+    "email": "roxanne.balistreri@yahoo.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01473022093",
+    "role": "Agent",
+    "name": "Telma",
+    "nid": "22554450",
+    "email": "donnette.barrows@yahoo.com"
+  }
+]

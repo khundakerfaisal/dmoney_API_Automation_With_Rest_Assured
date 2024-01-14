@@ -1,0 +1,50 @@
+[
+  {
+    "password": "123454",
+    "phoneNumber": "01479870689",
+    "role": "Customer",
+    "name": "Lance",
+    "nid": "22554450",
+    "email": "leann.powlowski@yahoo.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01476485955",
+    "role": "Customer",
+    "name": "Janna",
+    "nid": "22554450",
+    "email": "kip.quigley@yahoo.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01478707257",
+    "role": "Customer",
+    "name": "Francis",
+    "nid": "22554450",
+    "email": "annie.kuhn@yahoo.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01474229195",
+    "role": "Customer",
+    "name": "Genny",
+    "nid": "22554450",
+    "email": "marty.reichel@gmail.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01477074432",
+    "role": "Customer",
+    "name": "Delisa",
+    "nid": "22554450",
+    "email": "latosha.huels@yahoo.com"
+  },
+  {
+    "password": "123454",
+    "phoneNumber": "01479221992",
+    "role": "Customer",
+    "name": "Augustine",
+    "nid": "22554450",
+    "email": "theodore.olson@yahoo.com"
+  }
+]
