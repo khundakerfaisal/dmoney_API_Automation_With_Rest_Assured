@@ -2,7 +2,6 @@
 
 ## Prerequisite
 - Rest Assured
-- commons-configuration
 - Jackson Databind
 - TestNG
 - Install jdk-17.0.8
