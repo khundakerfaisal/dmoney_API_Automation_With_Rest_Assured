@@ -19,8 +19,8 @@ I have chanined the API's and generated reports using Allure report.
 - Add dependencies in build.gradle file
 - Hit the following command into the terminal for run the suite: ```gradle clean test```
 - For generating Allure Report use these commands:
-  ```allure generate allure-results``
-  ```allure serve allure-results```
+  - ```allure generate allure-results```
+  - ```allure serve allure-results```
 
 ## Allure Report
 ![Allure 1](https://github.com/khundakerfaisal/dmoney_API_Automation_With_Rest_Assured/assets/44666800/3032119f-f137-4fb5-bb56-d54a268089d3)
