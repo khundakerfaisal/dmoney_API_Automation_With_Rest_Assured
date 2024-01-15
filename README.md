@@ -15,7 +15,7 @@ deposit to customer number,money withdraw from the agent account, sendmoney to t
 I have chanined the API's and generated reports using Allure report.
 
 ## How to run this project
-- Clone this project:https://github.com/khundakerfaisal/dmoney_API_Automation_With_Rest_Assured
+- Clone this project:```https://github.com/khundakerfaisal/dmoney_API_Automation_With_Rest_Assured```
 - Add dependencies in build.gradle file
 - Hit the following command into the terminal for run the suite: ```gradle clean test```
 - For generating Allure Report use these commands:
