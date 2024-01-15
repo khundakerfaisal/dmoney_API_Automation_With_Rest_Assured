@@ -54,9 +54,6 @@ public class createUser {
     }
 
     public Response createUser(UserModel userModel) throws ConfigurationException, IOException, ParseException {
-//        Properties props=new Properties();
-//        FileInputStream fis=new FileInputStream("./src/test/resources/config.properties");
-//        props.load(fis);
         RestAssured.baseURI = baseUrl;
         Response res = given().contentType("application/json")
                 .header("Authorization", token)

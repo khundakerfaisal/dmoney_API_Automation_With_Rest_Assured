@@ -22,111 +22,80 @@ public class transactionTestRunner extends Setup {
         String token=login.doLogin("salman@roadtocareer.net","1234");
         System.out.println(token);
     }
-    @Test(priority = 2,enabled = false)
+    @Test(priority = 2,description = "Deposit successfully system to agent number")
     public void depositSystemToAgentNumber() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
+        String agentPhoneNumber=Utils.getAgentPhoneNumber().get("AgentPhoneNumber").toString();
         Transaction transaction=new Transaction();
         TransactionModel transactionModel=new TransactionModel();
         transactionModel.from_account="SYSTEM";
-        transactionModel.to_account="01473022093";
+        transactionModel.to_account=agentPhoneNumber;
         transactionModel.amount=2000;
         Response res = transaction.depositToAgent(transactionModel);
         System.out.println(res.asString());
-
-
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
-
     }
-
-    @Test(priority = 3,enabled = false)
+    @Test(priority = 3,description = "Deposit successfully customer from agent number")
     public void depositCustomerFromAgentNumber() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
-        Transaction transaction=new Transaction();
-        TransactionModel transactionModel=new TransactionModel();
-        transactionModel.from_account="01473022093";
-        transactionModel.to_account="01477074432";
-        transactionModel.amount=1500;
-        Response res = transaction.depositCustomerFromAgent(transactionModel);
-        System.out.println(res.asString());
+            String agentPhoneNumber = Utils.getAgentPhoneNumber().get("AgentPhoneNumber").toString();
+            String customerPhoneNumber = Utils.getCustomerPhoneNumber().get("CustomerPhoneNumber").toString();
+            Transaction transaction = new Transaction();
+            TransactionModel transactionModel = new TransactionModel();
+            transactionModel.from_account = agentPhoneNumber;
+            transactionModel.to_account = customerPhoneNumber;
+            transactionModel.amount = 1500;
+            Response res = transaction.depositCustomerFromAgent(transactionModel);
+            System.out.println(res.asString());
+        }
 
 
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
-
-    }
-    @Test(priority = 4,enabled = false)
+    @Test(priority = 4,description = "Withdraw successfully customer to agent number")
     public void withdrawCustomerToAgentNumber() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
+        String agentPhoneNumber=Utils.getAgentPhoneNumber().get("AgentPhoneNumber").toString();
+        String customerPhoneNumber=Utils.getCustomerPhoneNumber().get("CustomerPhoneNumber").toString();
         Transaction transaction=new Transaction();
         TransactionModel transactionModel=new TransactionModel();
-        transactionModel.from_account="01477074432";
-        transactionModel.to_account="01473022093";
+        transactionModel.from_account=customerPhoneNumber;
+        transactionModel.to_account=agentPhoneNumber;
         transactionModel.amount=500;
         Response res = transaction.withdrawFromAgent(transactionModel);
         System.out.println(res.asString());
 
-
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
-
     }
-    @Test(priority = 5,enabled = false)
+    @Test(priority = 5,description = "Send money successfully customer to another customer number")
     public void sendMoneyToAnotherCustomerNumber() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
+        String customerPhoneNumber=Utils.getCustomerPhoneNumber().get("CustomerPhoneNumber").toString();
+        String customerAnotherPhoneNumber= (String) Utils.getCustomerAnotherPhoneNumber().get("customerAnotherPhoneNumber");
         Transaction transaction=new Transaction();
         TransactionModel transactionModel=new TransactionModel();
-        transactionModel.from_account="01477074432";
-        transactionModel.to_account="01479221992";
+        transactionModel.from_account=customerPhoneNumber;
+        transactionModel.to_account=customerAnotherPhoneNumber;
         transactionModel.amount=500;
         Response res = transaction.sendMoney(transactionModel);
         System.out.println(res.asString());
 
-
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
     }
-    @Test(priority = 6,enabled = false)
+    @Test(priority = 6,description = "Customer payment successfully to the merchant number")
     public void makePaymentCustomer() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
+        String customerAnotherPhoneNumber= (String) Utils.getCustomerAnotherPhoneNumber().get("customerAnotherPhoneNumber");
         Transaction transaction=new Transaction();
         TransactionModel transactionModel=new TransactionModel();
-        transactionModel.from_account="01479221992";
+        transactionModel.from_account=customerAnotherPhoneNumber;
         transactionModel.to_account="01686606905";
         transactionModel.amount=100;
         Response res = transaction.merchantPayment(transactionModel);
         System.out.println(res.asString());
-
-
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
     }
-    @Test(priority = 7)
+    @Test(priority = 7,description = "check balance of the recipient customer ")
     public void checkRecipientBalance() throws ConfigurationException, IOException, ParseException {
         createUser login= new createUser(props.getProperty("baseUrl"),props.getProperty("token"));
+        String customerAnotherPhoneNumber= Utils.getCustomerAnotherPhoneNumber().get("customerAnotherPhoneNumber").toString();
         Transaction transaction=new Transaction();
-//        TransactionModel transactionModel=new TransactionModel();
-//        transactionModel.from_account="01479221992";
-//        transactionModel.to_account="01686606905";
-//        transactionModel.amount=100;
-        Response res = transaction.checkCustomerBalance("01479221992");
+        Response res =transaction.checkCustomerBalance(customerAnotherPhoneNumber);
         System.out.println(res.asString());
-
-
-//        Response res= transactionModel.toString();
-//        System.out.println(transactionModel.());
-//        Utils.createCustomer(userModel);
-
     }
 
 }

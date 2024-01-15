@@ -28,7 +28,7 @@ public class Utils {
         customerObj.put("name",model.getName());
         customerObj.put("email", model.getEmail());
         customerObj.put("password", model.getPassword());
-        customerObj.put("phoneNumber", model.getPhone_number());
+        customerObj.put("CustomerPhoneNumber", model.getPhone_number());
         customerObj.put("nid", model.getNid());
         customerObj.put("role", model.getRole());
         customerArray.add(customerObj);
@@ -46,7 +46,25 @@ public class Utils {
         customerObj.put("name",model.getName());
         customerObj.put("email", model.getEmail());
         customerObj.put("password", model.getPassword());
-        customerObj.put("phoneNumber", model.getPhone_number());
+        customerObj.put("AgentPhoneNumber", model.getPhone_number());
+        customerObj.put("nid", model.getNid());
+        customerObj.put("role", model.getRole());
+        customerArray.add(customerObj);
+        FileWriter writer = new FileWriter(fileLocation);
+        writer.write(customerArray.toJSONString());
+        writer.flush();
+        writer.close();
+
+    }
+    public static void createAnotherCustomer(UserModel model) throws IOException, ParseException {
+        String fileLocation = "./src/test/resources/customerAnother.json";
+        JSONParser parser=new JSONParser();
+        JSONArray customerArray = (JSONArray) parser.parse(new FileReader(fileLocation));
+        JSONObject customerObj = new JSONObject();
+        customerObj.put("name",model.getName());
+        customerObj.put("email", model.getEmail());
+        customerObj.put("password", model.getPassword());
+        customerObj.put("customerAnotherPhoneNumber", model.getPhone_number());
         customerObj.put("nid", model.getNid());
         customerObj.put("role", model.getRole());
         customerArray.add(customerObj);
@@ -66,6 +84,26 @@ public class Utils {
         double rand= Math.random()*(max-min)+min;
         return (int) rand;
     }
-
+    public static JSONObject getCustomerPhoneNumber() throws IOException, ParseException {
+        String fileLocation = "./src/test/resources/customers.json";
+        JSONParser parser = new JSONParser();
+        JSONArray empArray = (JSONArray) parser.parse(new FileReader(fileLocation));
+        JSONObject empObj = (JSONObject) empArray.get(empArray.size() - 1);
+        return empObj;
+    }
+    public static JSONObject getAgentPhoneNumber() throws IOException, ParseException {
+        String fileLocation = "./src/test/resources/agent.json";
+        JSONParser parser = new JSONParser();
+        JSONArray empArray = (JSONArray) parser.parse(new FileReader(fileLocation));
+        JSONObject empObjAgent = (JSONObject) empArray.get(empArray.size() - 1);
+        return empObjAgent;
+    }
+    public static JSONObject getCustomerAnotherPhoneNumber() throws IOException, ParseException {
+        String fileLocation = "./src/test/resources/customerAnother.json";
+        JSONParser parser = new JSONParser();
+        JSONArray empArray = (JSONArray) parser.parse(new FileReader(fileLocation));
+        JSONObject empObjCustomer = (JSONObject) empArray.get(empArray.size() - 1);
+        return empObjCustomer;
+    }
 
 }

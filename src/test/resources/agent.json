@@ -1,18 +1,1 @@
-[
-  {
-    "password": "123454",
-    "phoneNumber": "01478551459",
-    "role": "Agent",
-    "name": "Ying",
-    "nid": "22554450",
-    "email": "roxanne.balistreri@yahoo.com"
-  },
-  {
-    "password": "123454",
-    "phoneNumber": "01473022093",
-    "role": "Agent",
-    "name": "Telma",
-    "nid": "22554450",
-    "email": "donnette.barrows@yahoo.com"
-  }
-]
+[{"password":"123454","role":"Agent","name":"Blaine","nid":"22554450","AgentPhoneNumber":"01472758129","email":"lilliam.legros@gmail.com"},{"password":"123454","role":"Agent","name":"Nanci","nid":"22554450","AgentPhoneNumber":"01477774496","email":"vito.oberbrunner@gmail.com"},{"password":"123454","role":"Agent","name":"Willis","nid":"22554450","AgentPhoneNumber":"01477641711","email":"sharan.schinner@gmail.com"},{"password":"123454","role":"Agent","name":"Weston","nid":"22554450","AgentPhoneNumber":"01472543789","email":"tona.jacobi@gmail.com"},{"password":"123454","role":"Agent","name":"Laverna","nid":"22554450","AgentPhoneNumber":"01476350244","email":"lino.beahan@gmail.com"},{"password":"123454","role":"Agent","name":"Margarite","nid":"22554450","AgentPhoneNumber":"01479017496","email":"erin.medhurst@hotmail.com"},{"password":"123454","role":"Agent","name":"Eladia","nid":"22554450","AgentPhoneNumber":"01475687041","email":"elroy.toy@hotmail.com"},{"password":"123454","role":"Agent","name":"Johnny","nid":"22554450","AgentPhoneNumber":"01472774454","email":"ralph.gerhold@gmail.com"},{"password":"123454","role":"Agent","name":"Niesha","nid":"22554450","AgentPhoneNumber":"01478007341","email":"ellis.bayer@gmail.com"},{"password":"123454","role":"Agent","name":"Roger","nid":"22554450","AgentPhoneNumber":"01471944725","email":"lavona.west@gmail.com"}]
